@@ -54,7 +54,7 @@ function selectFilm(choice) {
   document.querySelector('#stage-category').textContent = currentFilm.category;
   document.querySelector('#stage-duration').textContent = currentFilm.duration;
   document.querySelector('#project-link').href = currentFilm.page;
-  document.querySelector('#selected-status').textContent = `${currentFilm.number} / 03 — ${currentFilm.title}`;
+  document.querySelector('#selected-status').textContent = `${currentFilm.number} / ${String(document.querySelectorAll('.film-choice').length).padStart(2, '0')} — ${currentFilm.title}`;
   document.querySelector('#watch-film').setAttribute('aria-label', `Watch ${currentFilm.title}`);
   updatePreview();
 }

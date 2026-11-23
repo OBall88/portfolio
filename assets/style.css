@@ -1089,3 +1089,52 @@ noscript p {
     object-position: 50% 42%;
   }
 }
+
+/* Four-project library and the listening-led ADR case study. */
+.film-shelf {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.listening-note {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+}
+.listening-note p { color: var(--muted); font-size: 12px; }
+.sound-chapters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 28px;
+  border-block: 1px solid var(--line);
+}
+.sound-chapters a { padding: 18px 0; color: var(--ink); }
+.sound-chapters a + a { padding-left: 24px; border-left: 1px solid var(--line); }
+.sound-chapters span { color: var(--accent); font-size: 10px; margin-right: 18px; }
+.sound-process {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(28px, 6vw, 90px);
+  padding-bottom: 65px;
+}
+.sound-process-photo img { border: 1px solid var(--line); border-radius: 3px; }
+.sound-process-photo figcaption { margin-top: 12px; font-size: 10px; }
+.sound-process-copy h2 { font-size: clamp(36px, 4vw, 64px); margin: 20px 0 28px; }
+.sound-process-copy p:not(.eyebrow) { color: #c3c7bc; }
+.sound-process-copy .sound-intro { font-size: 23px; line-height: 1.5; }
+@media (min-width: 721px) and (max-width: 1050px) {
+  .film-shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .film-choice:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+  .film-choice:nth-child(4) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 720px) {
+  .film-shelf { grid-template-columns: 1fr; }
+  .sound-process { grid-template-columns: 1fr; padding-bottom: 35px; }
+  .sound-process-photo { max-width: 460px; }
+  .sound-process-copy .sound-intro { font-size: 20px; }
+  .listening-note { align-items: flex-start; gap: 12px; flex-direction: column; }
+  .sound-chapters a + a { padding-left: 12px; }
+  .sound-chapters span { display: block; margin: 0 0 6px; }
+}
